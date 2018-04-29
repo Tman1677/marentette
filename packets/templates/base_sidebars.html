@@ -10,18 +10,24 @@
       <ul class="navbar-nav">
         <li class="nav-item">
           <h6>
-            Chapter Packets
+            Packets
           </h6>
         </li>
         {% if chapter_list %}
         {% for chapter in chapter_list %}
         <li class="nav-item">
-          <a class="nav-link {% if chapter.number == current_chapter.number %} active {% endif %}" href="{% url 'chapter-view' chapter.number %}">{{ chapter.name }}</a>
+          <a class="nav-link {% if chapter.number == current_packet.number %} active {% endif %}" href="{% url 'chapter-view' chapter.number %}">{{ chapter.name }}</a>
         </li>
         {% endfor %}
-        {% else %}
-        There are no chapters
         {% endif %}
+        {% if other_list %}
+        {% for other in other_list %}
+        <li class="nav-item">
+          <a class="nav-link {% if other.name == current_packet.name %} active {% endif %}" href="{% url 'other-view' other.id %}">{{ other.name }}</a>
+        </li>
+        {% endfor %}
+        {% endif %}
+
       </ul>
 
     </nav>

@@ -1,30 +1,8 @@
 {% extends "base_sidebars.html" %}
 
-{% block sidebarL %}
-<nav class="navbar navbar-light" id="nav-side">
-
-  <!-- Links -->
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <h6>
-        Chapter Packets
-      </h6>
-    </li>
-    {% if chapter_list %}
-    {% for chapter in chapter_list %}
-    <li class="nav-item">
-      <a class="nav-link {% if chapter.number == current_chapter.number %} active {% endif %}" href="{% url 'chapter-view' chapter.number %}">{{ chapter.name }}</a>
-    </li>
-    {% endfor %}
-    {% else %}
-    There are no chapters
-    {% endif %}
-  </ul>
-
-</nav>
-{% endblock %}
 {% block main %}
-  <h3>{{ current_chapter.name }} Packet</h3>
+  {% if current_packet %}
+  <h5>{{ current_packet.name }} Packet</h5>
   {% if video_list %}
   <ul>
 
@@ -44,4 +22,8 @@
   {% else %}
     <p>There are no videos for this packet.</p>
   {% endif %}
+  {% else %}
+  <h5>There is no chapter {{ attempted_num }}</h5>
+  {% endif %}
+
 {% endblock %}
