@@ -1,0 +1,36 @@
+{% extends "base_generic.html" %}
+
+{% block body %}
+<div class="row d-flex">
+  <div class="col-12 col-md-3 col-xl-2 py-md-2 sidebar collapse show bg-light">
+    {% block sidebarL %}
+    <nav class="navbar navbar-light" id="nav-side">
+
+      <!-- Links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <h6>
+            Chapter Packets
+          </h6>
+        </li>
+        {% if chapter_list %}
+        {% for chapter in chapter_list %}
+        <li class="nav-item">
+          <a class="nav-link {% if chapter.number == current_chapter.number %} active {% endif %}" href="{% url 'chapter-view' chapter.number %}">{{ chapter.name }}</a>
+        </li>
+        {% endfor %}
+        {% else %}
+        There are no chapters
+        {% endif %}
+      </ul>
+
+    </nav>
+    {% endblock %}
+  </div>
+  <div class="col-12 col-md-9 col-xl-10 py-md-3 pl-md-5 border-left border-right">
+    {% block main %}
+
+    {% endblock %}
+  </div>
+</div>
+{% endblock %}
