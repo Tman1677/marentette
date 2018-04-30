@@ -7,6 +7,11 @@ class Index(generic.ListView):
     model = ChapterPacket
     context_object_name = 'chapter_list'
     template_name = 'index.html'
+    def get_context_data(self, *args, **kwargs):
+        context = super(Index, self).get_context_data(*args, **kwargs) #keep the base context normal
+        context['other_list'] = OtherPacket.objects.all()
+        return context
+
 
 class ChapterView(generic.ListView):
     model = ChapterPacket
