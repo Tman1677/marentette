@@ -2,16 +2,16 @@
 
 {% block body %}
 <div class="row d-flex">
-  <div class="col-12 col-md-3 col-xl-2 py-md-2 sidebar-l collapse show bg-light border-right">
+  <div class="d-md-block d-none col-md-3 col-xl-2 py-md-2 sidebar-l bg-light">
     {% block sidebarL %}
     <nav class="navbar navbar-light" id="nav-side">
 
       <!-- Links -->
       <ul class="navbar-nav">
         <li class="nav-item">
-          <h6>
+          <h5>
             Packets
-          </h6>
+          </h5>
         </li>
         {% if chapter_list %}
         {% for chapter in chapter_list %}
@@ -33,12 +33,12 @@
     </nav>
     {% endblock %}
   </div>
-  <div class="col-12 col-md-9 col-xl-8 py-md-3 main pl-md-5 border-left border-right">
+  <div class="col-12 col-md-9 col-xl-8 py-3 main pl-md-5 border-left border-right">
     {% block main %}
 
     {% endblock %}
   </div>
-  <div class="d-xl-flex d-none col-xl-2 sidebar-r py-md-3">
+  <div class="d-xl-block d-none col-xl-2 sidebar-r py-xl-3">
     {% block sidebarR %}
     This is a small sidebar that hides itself when the screen can't support it
     {% endblock %}

@@ -2,16 +2,16 @@
 
 {% block body %}
 <div class="row d-flex">
-  <div class="col-12 col-md-3 col-xl-2 py-md-2 sidebar-l collapse show bg-light">
+  <div class="d-md-block d-none col-md-3 col-xl-2 py-md-2 sidebar-l bg-light">
     {% block sidebarL %}
     <nav class="navbar navbar-light" id="nav-side">
 
       <!-- Links -->
       <ul class="navbar-nav">
         <li class="nav-item">
-          <h6>
+          <h5>
             Packets
-          </h6>
+          </h5>
         </li>
         {% if chapter_list %}
         {% for chapter in chapter_list %}

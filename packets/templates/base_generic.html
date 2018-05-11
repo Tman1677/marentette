@@ -10,12 +10,14 @@
     <!-- Personal CSS, after Bootstrap to override if necessary -->
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    {% block title %}<title>Hello, world!</title>{% endblock %}
+    <!-- load the icon (stolen from marentette's old site) -->
+    <link rel="shortcut icon" href="http://www.wikis.birmingham.k12.mi.us/_/55v9k02z/i/logo-16.png">
+    {% block title %}<title>Physics C Videos</title>{% endblock %}
   </head>
   <body>
     <header>
       <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-secondary border-bottom" id="nav-top">
-        <a class="navbar-brand" href="{% url 'index' %}">The Unofficial Ms. Marentette Physics C Video Hub</a>
+        <a class="navbar-brand" href="{% url 'index' %}">Physics C Video Hub</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -24,19 +26,25 @@
             <li class="nav-item active">
               <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
+                Packets
               </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
+              <div class="scrollable-dropdown dropdown-menu" aria-labelledby="navbarDropdown">
+                {% if chapter_list %}
+                {% for chapter in chapter_list %}
+                  <a class="dropdown-item {% if chapter.number == current_packet.number %} active {% endif %}" href="{% url 'chapter-view' chapter.number %}">{{ chapter.name }}</a>
+                {% endfor %}
+                {% endif %}
+                {% if other_list %}
+                {% for other in other_list %}
+                  <a class="dropdown-item {% if other.name == current_packet.name %} active {% endif %}" href="{% url 'other-view' other.id %}">{{ other.name }}</a>
+                {% endfor %}
+                {% endif %}
               </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Dev Notes</a>
             </li>
           </ul>
           <ul class="navbar-nav ml-auto">

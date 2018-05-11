@@ -1,3 +1,14 @@
+//Custom css to be compiled into style.css in the static directory
+
+$navbarHeight: 55px; //to be used by later definitions
+
+.scrollable-dropdown {
+    height: auto;
+    max-height: 300px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
 .basicVideo {
   width: 100%;
   max-width: 576px;
@@ -5,35 +16,17 @@
 #nav-side li a{
     padding: 1px;
 }
-#nav-top {
-}
-
 #nav-top-last {
   float: right;
 }
+body {
+  padding-top: $navbarHeight;
+}
 
-$navbarHeight: 55px; //to be used by later definitions
 
 @media (min-width: 768px){
-
-  body {
-    overflow: hidden;
-  }
-  .sidebar-l {
-    // position: absolute;
-    top: $navbarHeight;
-    height: calc(100vh - #{$navbarHeight});
-    overflow-y: scroll;
-  }
-  .main {
-    // position: absolute;
-    top: $navbarHeight;
-    height: calc(100vh - #{$navbarHeight});
-    overflow-y: scroll;
-  }
-  .sidebar-r {
-    // position: absolute;
-    top: $navbarHeight;
+  .main, .sidebar-r, .sidebar-l {
+    top: 0;
     height: calc(100vh - #{$navbarHeight});
     overflow-y: scroll;
   }
