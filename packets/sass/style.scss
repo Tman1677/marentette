@@ -22,19 +22,19 @@ $navbarHeight: 55px; //to be used by later definitions
   .sidebar-l {
     // position: absolute;
     top: $navbarHeight;
-    height: 100vh;
+    height: calc(100vh - #{$navbarHeight});
     overflow-y: scroll;
   }
   .main {
     // position: absolute;
     top: $navbarHeight;
-    height: 100vh;
+    height: calc(100vh - #{$navbarHeight});
     overflow-y: scroll;
   }
   .sidebar-r {
     // position: absolute;
     top: $navbarHeight;
-    height: 100vh;
+    height: calc(100vh - #{$navbarHeight});
     overflow-y: scroll;
   }
 }
