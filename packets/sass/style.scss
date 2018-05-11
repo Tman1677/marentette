@@ -11,30 +11,30 @@
 #nav-top-last {
   float: right;
 }
-body {
-  padding-top: 55px;
-}
+
+$navbarHeight: 55px; //to be used by later definitions
 
 @media (min-width: 768px){
-  #leftCol {
-    position: absolute;
-    top: 0px;
-    bottom: 0;
-    left: 0;
+
+  body {
+    overflow: hidden;
+  }
+  .sidebar-l {
+    // position: absolute;
+    top: $navbarHeight;
+    height: 100vh;
     overflow-y: scroll;
   }
-  #centerCol {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      overflow-y: scroll;
+  .main {
+    // position: absolute;
+    top: $navbarHeight;
+    height: 100vh;
+    overflow-y: scroll;
   }
-  #rightCol {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
+  .sidebar-r {
+    // position: absolute;
+    top: $navbarHeight;
+    height: 100vh;
     overflow-y: scroll;
   }
 }

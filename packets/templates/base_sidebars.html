@@ -2,7 +2,7 @@
 
 {% block body %}
 <div class="row d-flex">
-  <div class="col-12 col-md-3 col-xl-2 py-md-2 sidebar collapse show bg-light">
+  <div class="col-12 col-md-3 col-xl-2 py-md-2 sidebar-l collapse show bg-light border-right">
     {% block sidebarL %}
     <nav class="navbar navbar-light" id="nav-side">
 
@@ -33,12 +33,12 @@
     </nav>
     {% endblock %}
   </div>
-  <div class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 border-left border-right">
+  <div class="col-12 col-md-9 col-xl-8 py-md-3 main pl-md-5 border-left border-right">
     {% block main %}
 
     {% endblock %}
   </div>
-  <div class="d-xl-block d-none col-xl-2 py-md-3">
+  <div class="d-xl-flex d-none col-xl-2 sidebar-r py-md-3">
     {% block sidebarR %}
     This is a small sidebar that hides itself when the screen can't support it
     {% endblock %}
