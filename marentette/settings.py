@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'marentette.wsgi.application'
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
-SECRET_KEY = config('This isn't so secret since I'm deploying to github')
+
 DEBUG = config('DEBUG', default=False, cast=bool)
 DATABASES = {
     'default': dj_database_url.config(
