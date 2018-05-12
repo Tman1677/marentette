@@ -6,17 +6,21 @@
     Adding users
   </h4>
   <p>
-    This website was created by Tristan Kreindler as a sort of hobby project to learn how to use multiple things he was at the time unfamiliar with, in particular the web framework Django and Bootstrap css.
-    This project is entirely open source and is available <a href="https://github.com/Tman1677/marentette" target="_blank"> on GitHub</a>.
-    I made it so adding new videos and packets to the website is quite easy so that pretty much anyone can do it, but getting beyond that this framework gets pretty complicated and it's gonna be pretty hard to change.
-    So I'm gonna break this tutorial into two parts, the first part will be adding videos and packets and it's pretty easy, the second part, well get ready to learn some web frameworks.
+    To add a user you're going to need to go to <a href="{% url 'admin:index' %}">the admin page</a> and login with the SeaholmPhysicsStudent account I gave Mr. Stukey.
+    That account is a super user and can do anything to the database storing the video links.
+    Although you can create another super user account I wouldn't get in the habit of it or give super user accounts out willy nilly to students.
+    Because of that this guide assumes you're going to make a student account that can only add videos, not sabotage other work.
+  </p>
+  <p>
+    On the admin page click plus next to users, give them a username and then let them type in a password.
+    Click save to go to the next page. The next page looks really complicated but there's only two things we need to do.
+    You need to check the box that says "Staff Status" and double click on the "General Student" group so it goes over to the chosen groups side.
+    It should look like this:
+    {% load static %}
+    <img src="{% static 'images/userStep1.png' %}" alt="" class="img-fluid">
   </p>
   <h4>
-    Adding videos or packets
+    Make sure you save at the bottom of the page after!
   </h4>
-  <p>
-    This is hopefully the only maintenance work that will need to be done, essentially if there's a packet with videos that isn't on here go wading through her website to find the appropriate videos.
-    After you find it hopefully you want to be a nice person and keep someone else from going back to that site so you can follow this guide to add that video to this website.
-  </p>
 
 {% endblock %}

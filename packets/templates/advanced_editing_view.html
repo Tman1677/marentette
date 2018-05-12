@@ -10,8 +10,14 @@
   </p>
   <p>
     First off I'll just explain the setup of this site. It is a Django website being hosted with Gunicorn on a Heroku server with Heroku's built in Postgres database and all the styling of the website is done with Bootstrap 4.1.
-    That was a mouthful. The source for the website is hosted 
-
+    That was a mouthful. The source for the website is hosted <a href="https://github.com/SeaholmPhysicsStudent/marentette">on Github</a> by the "SeaholmPhysicsStudent" account I'm giving to Mr. Stukey.
+    That source is then run on the SeaholmPhysicsStudent account on heroku for a free webserver. It takes a minute to spin up when it hasn't been accessed in a while but after that it's super fast.
+  </p>
+  <p>
+    If you're going to have any reasonable chance of fixing or adding to this website the main thing you're going to need to know is Django.
+    I would recommend <a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Tutorial_local_library_website">this guide</a> to Django as it is very detail and step by step.
+    If there is anything wrong with the database use the SeaholmPhysicsStudent admin account I'm giving Mr. Stukey the credentials to and go to <a href="{% url 'admin:index' %}">the admin page</a> to fix something else.
+    If you want to edit the Bootstrap color scheme or any other css provided you will need to write a scss file in the sass folder and then use gulp or some other sass compiler to generate the css in the right folder, don't edit the css straight up.
   </p>
 
 {% endblock %}

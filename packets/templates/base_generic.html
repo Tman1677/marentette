@@ -23,11 +23,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li class="nav-item {% if home %}active{% endif %}">
               <a class="nav-link" href="{% url 'index' %}">Home</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle {% if packet %}active{% endif %}" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Packets
               </a>
               <div class="scrollable-dropdown dropdown-menu" aria-labelledby="navbarDropdown">
@@ -44,13 +44,13 @@
               </div>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle {% if add_video %}active{% endif %}{% if add_users %}active{% endif %}{% if advanced %}active{% endif %}" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Dev Notes
               </a>
               <div class="scrollable-dropdown dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="{% url 'add-video-view' %}">Add Video</a>
-                  <a class="dropdown-item" href="{% url 'add-user-view' %}">Add Users</a>
-                  <a class="dropdown-item" href="{% url 'advanced-view' %}">Advanced Editing</a>
+                  <a class="dropdown-item {% if add_video %}active{% endif %}" href="{% url 'add-video-view' %}">Add Video</a>
+                  <a class="dropdown-item {% if add_users %}active{% endif %}" href="{% url 'add-user-view' %}">Add Users</a>
+                  <a class="dropdown-item {% if advanced %}active{% endif %}" href="{% url 'advanced-view' %}">Advanced Editing</a>
               </div>
             </li>
           </ul>
