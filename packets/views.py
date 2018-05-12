@@ -40,3 +40,36 @@ class OtherView(generic.ListView):
         except:
             context['attempted_num'] = self.kwargs['pk']
         return context
+
+class DevView(generic.ListView):
+    model = ChapterPacket
+    context_object_name = 'chapter_list'
+    template_name = 'dev_view.html'
+    def get_context_data(self, *args, **kwargs):
+        context = super(DevView, self).get_context_data(*args, **kwargs) #keep the base context normal
+        context['other_list'] = OtherPacket.objects.all()
+        return context
+class AddUserView(generic.ListView):
+    model = ChapterPacket
+    context_object_name = 'chapter_list'
+    template_name = 'add_user_view.html'
+    def get_context_data(self, *args, **kwargs):
+        context = super(AddUserView, self).get_context_data(*args, **kwargs) #keep the base context normal
+        context['other_list'] = OtherPacket.objects.all()
+        return context
+class AddVideoView(generic.ListView):
+    model = ChapterPacket
+    context_object_name = 'chapter_list'
+    template_name = 'add_video_view.html'
+    def get_context_data(self, *args, **kwargs):
+        context = super(AddVideoView, self).get_context_data(*args, **kwargs) #keep the base context normal
+        context['other_list'] = OtherPacket.objects.all()
+        return context
+class AdvancedView(generic.ListView):
+    model = ChapterPacket
+    context_object_name = 'chapter_list'
+    template_name = 'advanced_editing_view.html'
+    def get_context_data(self, *args, **kwargs):
+        context = super(AdvancedView, self).get_context_data(*args, **kwargs) #keep the base context normal
+        context['other_list'] = OtherPacket.objects.all()
+        return context

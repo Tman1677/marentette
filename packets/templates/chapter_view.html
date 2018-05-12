@@ -2,22 +2,19 @@
 
 {% block main %}
   {% if current_packet %}
-  <h5>{{ current_packet.name }} Packet</h5>
+  <h4>{{ current_packet.name }} Packet</h4>
   {% if video_list %}
-  <ul>
 
-    {% for video in video_list %}
-      <p>
-        {{video.name}}
-        <br>
-        <video class="basicVideo border" controls controlsList="nodownload">
-          <source src="{{ video.url }}" type="video/mp4">
-          Please stop using a potato for a web browser
-        </video>
-      </p>
-    {% endfor %}
-
-  </ul>
+  {% for video in video_list %}
+    <p>
+      {{video.name}}
+      <br>
+      <video class="basicVideo border" controls controlsList="nodownload">
+        <source src="{{ video.url }}" type="video/mp4">
+        Please stop using a potato for a web browser
+      </video>
+    </p>
+  {% endfor %}
 
   {% else %}
     <p>There are no videos for this packet.</p>

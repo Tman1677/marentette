@@ -1,0 +1,63 @@
+{% extends "base_sidebars.html" %}
+
+{% block main %}
+  <h4>
+    Adding videos or packets
+  </h4>
+  <p>
+    This is hopefully the only maintenance work that will need to be done, essentially if there's a packet with videos that isn't on here go wading through her website to find the appropriate videos.
+    After you find it hopefully you want to be a nice person and keep someone else from going back to that site so you can follow this guide to add that video to this website.
+  </p>
+  <h5>
+    Step 1: Logging on the admin site
+  </h5>
+  <p>
+    To add a video to this website go to <a href="{% url 'admin:index' %}">marentette.herokuapp.com/admin</a> and login.
+    You'll need an account to log in with so hopefully Mr. Stukey has made you an account to log in with.
+    If you're Mr. Stukey click <a href="{% url 'add-user-view' %}">here</a> for a guide on how to add users.
+  </p>
+  <h5>
+    Step 2: Opening the inspector
+  </h5>
+  <p>
+    To get the video url from the old website you need to have your inspector out.
+    Every modern browser has the functionality of of opening the inspector but I would recommend google chrome and that is the browser I will be proving images for.
+    Generally on windows computers to open the inspector you just press f12, on Unix systems the shortcut is usually different, Chrome on macs' shortcut is Command-Option-I.
+    If you can't figure out how to open the inspector just Google it.
+  </p>
+  <h5>
+    Step 3: Grabbing the link
+  </h5>
+    {% load static %}
+  <p>
+    Click on the element inspect tool in the inspector on Chrome. You can do this on other browsers but it'll be at least a bit different.
+    <img src="{% static 'images/videoStep1.png' %}" class="img-fluid">
+  </p>
+  <p>
+    Click on the video you would like to add and it should highlight the video html in blue as shown.
+    <img src="{% static 'images/videoStep2.png' %}" class="img-fluid">
+  </p>
+  <p>
+    Start and then stop the video you just clicked on and where the blue highlight was before a url will appear as shown below, click on it and copy it.
+    <img src="{% static 'images/videoStep3.png' %}" class="img-fluid">
+  </p>
+  <h5>
+    Step 4: Adding the Video
+  </h5>
+  <p>
+    Go back to the admin page and click add video.
+    The video will be assigned to EITHER a chapter packet in which case you'll select the chapter number it belongs to or an other packet.
+    If it belongs to a non-chapter packet leave the chapter packet field blank and select the other packet it belongs to.
+    If the packet isn't on the website yet you can add it easily with the plus button next to the chapter packet or other packet field respective.
+  </p>
+  <p>
+    Paste the video url you got in Step 3 into the url box.
+    The first and last problem fields are fairly self explanatory, for instance if your video is problems 4-7 the first problem is 4 and the last is 7.
+    The optional sub-problem fields are a little less obvious, if the problems covered by the video is 5-7ab The final problem sub problems will be "ab" and the first problem sub problems you'll leave blank.
+    The sub problem fields will be blank most of the time.
+  </p>
+  <p>
+    If you have any other questions, just figure it out, it's really not that hard, as long as you put one chapter packet OR one other packet on each video but not both it's pretty hard to mess up.
+  </p>
+
+{% endblock %}
