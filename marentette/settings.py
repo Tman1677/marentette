@@ -83,7 +83,6 @@ WSGI_APPLICATION = 'marentette.wsgi.application'
 #     }
 # }
 
-DEBUG = config('DEBUG', default=False, cast=bool)
 DATABASES = {
     'default': dj_database_url.config(
         default=config('postgres://rpdalzzkypxgtg:eb6492bced1fdb980ee03dc3ca23b910e1c7f9003baa5a55e2a3a5429e9890e4@ec2-54-83-1-94.compute-1.amazonaws.com:5432/d7g3s8j2t22u04')
