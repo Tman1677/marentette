@@ -9,13 +9,13 @@ class OtherPacket(models.Model):
 
 class ChapterPacket(models.Model):
     pass
-    # number = models.IntegerField(unique=True)
-    # def name(self):
-    #     return "Chapter " + str(self.number)
-    # def __str__(self):
-    #     return self.name()
-    # class Meta:
-    #     ordering = ["number"]
+    number = models.IntegerField(unique=True)
+    def name(self):
+        return "Chapter " + str(self.number)
+    def __str__(self):
+        return self.name()
+    class Meta:
+        ordering = ["number"]
 
 
 class Video(models.Model):
