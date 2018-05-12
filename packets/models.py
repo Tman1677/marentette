@@ -8,7 +8,6 @@ class OtherPacket(models.Model):
         return self.name()
 
 class ChapterPacket(models.Model):
-    pass
     number = models.IntegerField(unique=True)
     def name(self):
         return "Chapter " + str(self.number)
