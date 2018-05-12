@@ -76,18 +76,18 @@ WSGI_APPLICATION = 'marentette.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
 DATABASES = {
-    'default': dj_database_url.config(
-        default=config('postgres://rpdalzzkypxgtg:eb6492bced1fdb980ee03dc3ca23b910e1c7f9003baa5a55e2a3a5429e9890e4@ec2-54-83-1-94.compute-1.amazonaws.com:5432/d7g3s8j2t22u04')
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
+
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default=config('postgres://rpdalzzkypxgtg:eb6492bced1fdb980ee03dc3ca23b910e1c7f9003baa5a55e2a3a5429e9890e4@ec2-54-83-1-94.compute-1.amazonaws.com:5432/d7g3s8j2t22u04')
+#     )
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -129,3 +129,5 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+django_heroku.settings(locals())
