@@ -3,12 +3,12 @@ from django.db import models
 # Create your models here.
 
 class OtherPacket(models.Model):
-    id = models.bigintegerfield(primary_key = true)
+    id = models.BigIntegerField(primary_key = True)
     name = models.CharField(max_length=50)
     def __str__(self):
         return self.name
 class ChapterPacket(models.Model):
-    id = models.bigintegerfield(primary_key = true)
+    id = models.BigIntegerField(primary_key = True)
     number = models.IntegerField(unique=True)
     def name(self):
         return "Chapter " + str(self.number)
@@ -19,7 +19,7 @@ class ChapterPacket(models.Model):
 
 
 class Video(models.Model):
-    id = models.bigintegerfield(primary_key = true)
+    id = models.BigIntegerField(primary_key = True)
     chapterPacket = models.ForeignKey('ChapterPacket', on_delete=models.SET_NULL,blank=True, null=True)
     otherPacket = models.ForeignKey('OtherPacket', on_delete=models.SET_NULL,blank=True, null=True)
     url = models.URLField(max_length=200)
