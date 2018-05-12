@@ -55,6 +55,8 @@ class AddUserView(generic.ListView):
         context = super(AddUserView, self).get_context_data(*args, **kwargs) #keep the base context normal
         context['other_list'] = OtherPacket.objects.all()
         context['add_users'] = True
+        context['chapter_list'] = False
+        context['other_list'] = False
         return context
 class AddVideoView(generic.ListView):
     model = ChapterPacket
@@ -64,6 +66,8 @@ class AddVideoView(generic.ListView):
         context = super(AddVideoView, self).get_context_data(*args, **kwargs) #keep the base context normal
         context['other_list'] = OtherPacket.objects.all()
         context['add_video'] = True
+        context['chapter_list'] = False
+        context['other_list'] = False
         return context
 class AdvancedView(generic.ListView):
     model = ChapterPacket
@@ -73,4 +77,6 @@ class AdvancedView(generic.ListView):
         context = super(AdvancedView, self).get_context_data(*args, **kwargs) #keep the base context normal
         context['other_list'] = OtherPacket.objects.all()
         context['advanced'] = True
+        context['chapter_list'] = False
+        context['other_list'] = False
         return context
