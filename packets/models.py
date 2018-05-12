@@ -5,8 +5,7 @@ from django.db import models
 class OtherPacket(models.Model):
     name = models.CharField(max_length=50)
     def __str__(self):
-        return self.name()
-
+        return self.name
 class ChapterPacket(models.Model):
     number = models.IntegerField(unique=True)
     def name(self):
@@ -38,7 +37,7 @@ class Video(models.Model):
             return self.chapterPacket.name() + problemString + self.problems()
         except:
             try:
-                return self.otherPacket.name() + problemString + self.problems()
+                return self.otherPacket.name + problemString + self.problems()
             except:
                 return "Error there is no packet assigned to this problem"
     def problems(self):
