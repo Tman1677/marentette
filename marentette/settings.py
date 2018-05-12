@@ -21,13 +21,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # um I'm not really sure how to hide this, please don't hack this educational project
-# so I looked into it and it seems to only matter if the site has logins which this doesn't so we should be good...
+# so I looked into it and it seems to only matter if the site has 2fa which this doesn't so we should be good...
 SECRET_KEY = '3ql1%%j4=c9z1z1k(c7wpj&o)=4=##&lk2xv6#r(h#)aobp+v2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['localhost','marentette.herokuapp.com']
+ALLOWED_HOSTS = ['marentette.herokuapp.com']
 
 
 # Application definition
