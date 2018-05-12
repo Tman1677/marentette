@@ -1,1 +1,1 @@
-web: gunicorn marentette.wsgi --log-file -
+web: gunicorn marentette.wsgi -w 3 --log-file -
