@@ -3,23 +3,21 @@ from django.db import models
 # Create your models here.
 
 class OtherPacket(models.Model):
-    id = models.BigIntegerField(primary_key = True)
     name = models.CharField(max_length=50)
     def __str__(self):
-        return self.name
-class ChapterPacket(models.Model):
-    id = models.BigIntegerField(primary_key = True)
-    number = models.IntegerField(unique=True)
-    def name(self):
-        return "Chapter " + str(self.number)
-    def __str__(self):
         return self.name()
-    class Meta:
-        ordering = ["number"]
+
+# class ChapterPacket(models.Model):
+#     number = models.IntegerField(unique=True)
+#     def name(self):
+#         return "Chapter " + str(self.number)
+#     def __str__(self):
+#         return self.name()
+#     class Meta:
+#         ordering = ["number"]
 
 
 class Video(models.Model):
-    id = models.BigIntegerField(primary_key = True)
     chapterPacket = models.ForeignKey('ChapterPacket', on_delete=models.SET_NULL,blank=True, null=True)
     otherPacket = models.ForeignKey('OtherPacket', on_delete=models.SET_NULL,blank=True, null=True)
     url = models.URLField(max_length=200)
@@ -40,7 +38,7 @@ class Video(models.Model):
             return self.chapterPacket.name() + problemString + self.problems()
         except:
             try:
-                return self.otherPacket.name + problemString + self.problems()
+                return self.otherPacket.name() + problemString + self.problems()
             except:
                 return "Error there is no packet assigned to this problem"
     def problems(self):
