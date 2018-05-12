@@ -11,6 +11,8 @@ class Index(generic.ListView):
         context = super(Index, self).get_context_data(*args, **kwargs) #keep the base context normal
         context['other_list'] = OtherPacket.objects.all()
         context['home'] = True
+        context['chapter_list'] = False
+        context['other_list'] = False
         return context
 
 
