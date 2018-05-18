@@ -28,6 +28,6 @@ body {
   .main, .sidebar-r, .sidebar-l {
     top: 0;
     height: calc(100vh - #{$navbarHeight});
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 }
